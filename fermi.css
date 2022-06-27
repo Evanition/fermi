@@ -102,3 +102,17 @@ form {
         filter: opacity(0%);
     }
 }
+@keyframes slideout {
+    0% {
+        transform: translateY(0%);
+        filter: opacity(100%);
+    } 
+    99% {
+        transform: translateY(-100%);
+        filter: opacity(0%);
+    }
+    100% {
+        transform: translateY(100%);
+        filter: opacity(0%);
+    }
+}

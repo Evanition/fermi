@@ -407,7 +407,11 @@ function setPoints(){
     document.getElementById("Points").textContent = "Points: "+points;
     document.getElementById("PointChange").textContent = points-initialPoints;
     document.getElementById("PointChange").style.visibility = "visible";
-    document.getElementById('PointChange').style.animation = 'slidein 1s';
+    if(points-initialPoints >= 0){
+        document.getElementById('PointChange').style.animation = 'slideout 1s';
+    }else{
+        document.getElementById('PointChange').style.animation = 'slidein 1s';
+    }
     setTimeout(setNone, 1000);
 }
 function setPrev(){
@@ -477,7 +481,7 @@ function addPoints(){
     }else{
         document.documentElement.style.setProperty('--points',  '#ff0000');
     }
-    if(points-initialPoints > 0){
+    if(points-initialPoints >= 0){
         document.documentElement.style.setProperty('--points2',  '#00ff00');
     }else{
         document.documentElement.style.setProperty('--points2',  '#ff0000');

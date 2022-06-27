@@ -362,6 +362,7 @@ function setCustom(){
         {"Question":"If a " + spheres[sp].name + " rolled across " +distances[d].name +" how many revolutions would it make?", "Answer": Math.floor(Math.log10((1000*distances[d].length)/spheres[sp].circumfrence)) + ""},
         {"Question":"How much louder/quieter is a " + sounds[so].name + " than a " + sounds[so2].name +" ?", "Answer": Math.round((sounds[so].decibels-sounds[so2].decibels)/10) + ""},
         {"Question":"How much more enrgy is released by a " + second + " magnitude earthquake than a " + first + " ?", "Answer": Math.round(Math.log10((31**(second -first)))) + ""},
+        console.log(second + ": " + first + ": " +" "+Math.round(Math.log10((31**(second -first)))))
     ]
 }
 function setMath(){

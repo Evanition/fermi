@@ -1,0 +1,81 @@
+:root{
+    --main-bg-color: 72;
+    --points: green;
+}
+html {
+    height:100%;
+    font-size: 50px;
+}
+body {
+    position: relative;
+    height:100%;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+#Question {
+    display:flex;
+    position: absolute;
+    top: 30%;
+    border: medium dashed green;
+    margin:5%;
+
+}
+#Answer {
+    display:flex;
+    position: absolute;
+    top: 70%;
+    border: medium dashed green;
+    justify-content: center;
+}
+#PrevAnswer {
+    display:flex;
+    position: absolute;
+    top: 70%;
+    left:10%;
+    border: medium dashed green;
+    justify-content: center;
+}
+#Streak {
+    display:flex;
+    position: absolute;
+    top: 10%;
+    Left: 10%;
+    border: medium dashed green;
+    justify-content: center;
+    
+}
+#Points {
+    display:flex;
+    position: absolute;
+    top: 10%;
+    right: 10%;
+    border: medium dashed green;
+    justify-content: center;
+    color: var(--points);
+}
+#slides {
+    display:flex;
+    position: absolute;
+    top: 10%;
+    color: hsl(var(--main-bg-color), 100%, 50%);
+    border: medium dashed green;
+    justify-content: center;
+    text-shadow: 2px 2px #000000;
+
+}
+#type {
+    font-size: 20px;
+    height:20%;
+    width:100%
+}
+form {
+    width:10%;
+    margin-right:10%;
+}
+#guess {
+    margin: 20%;
+}
+#none {
+    display: none;
+}

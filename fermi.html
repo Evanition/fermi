@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="fermi.css">
+    <script src="fermi.js" defer></script>
+</head>
+<body onload= "setQuestion(); setMath()">
+    <div id = "Question">How?</div>
+    <div id = "Answer">
+        <p>10</p>
+        <form>
+        <input type="text" label for = "exponent" id ="type">
+        <input id ="none" type="submit" value="Submit" id = "guess" onclick="setPrev();check(); setStreak(); setPoints(); randomize(); setQuestion(); return false"></input>
+        </form>
+    </div>
+    <div id = "Streak">Streak: 0</div>
+    <div id = "Points">Points: 0</div>
+    <div id = "PrevAnswer">Prev Ans</div>
+    <div class="Slider" id = "slides">
+        <p>Difficulty</p>
+        <input type="range" min="1" max="5" value="3" class="slider" id="myRange">
+    </div>
+</body>
+</html>

@@ -336,7 +336,66 @@ let sounds =
         "decibels": 120,
     },
 ]
+let bodies =
+[
+    // use m/s^2 cubic m and kg
+    {
+        "name": "Mercury",
+        "mass": 3.285 * 10**23 ,
+        "volume": 6.08 * 10**19,
+        "gravity": 3.7,
+    },
+    {
+        "name": "Venus",
+        "mass": 4.867 * 10**24 ,
+        "volume": 9.2843 * 10**20,
+        "gravity": 3.7,
+    },
+    {
+        "name": "Earth",
+        "mass": 5.97 * 10**24 ,
+        "volume": 1.08321 * 10**21,
+        "gravity": 9.8,
+    },
+    {
+        "name": "Mars",
+        "mass": 0.642 * 10**24 ,
+        "volume": 1.6318 * 10**20,
+        "gravity": 1.6,
+    },
+    {
+        "name": "Jupiter",
+        "mass": 1898 * 10**24 ,
+        "volume": 1.43128 * 10**24,
+        "gravity": 23.1,
+    },
+    {
+        "name": "Saturn",
+        "mass": 568 * 10**24 ,
+        "volume": 8.2713 * 10**23,
+        "gravity": 9.0,
+    },
+    {
+        "name": "Uranus",
+        "mass": 86.8 * 10**24 ,
+        "volume": 6.833 * 10**22,
+        "gravity": 8.7,
+    },
+    {
+        "name": "Neptune",
+        "mass": 102 * 10**24 ,
+        "volume": 6.254 * 10**22,
+        "gravity": 11.0,
+    },
+    {
+        "name": "Pluto",
+        "mass": 0.0130 * 10**24 ,
+        "volume": 7.15 * 10**18,
+        "gravity": 0.7,
+    },
+]
 small = small.concat(spheres);
+large = large.concat(bodies);
 s = Math.floor(small.length * Math.random());
 l = Math.floor(large.length * Math.random());
 let custom = 

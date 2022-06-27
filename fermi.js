@@ -220,7 +220,7 @@ let questions =
 ]
 var x = Math.floor(30 * Math.random()+1);
 var y = Math.floor(30 * Math.random()+1);
-
+initialPoints = 0;
 var specific = questions[Math.floor(questions.length*Math.random())];
 
 let maths =     
@@ -405,9 +405,17 @@ function setStreak(){
 }
 function setPoints(){
     document.getElementById("Points").textContent = "Points: "+points;
+    document.getElementById("PointChange").textContent = points-initialPoints;
+    document.getElementById("PointChange").style.visibility = "visible";
+    document.getElementById('PointChange').style.animation = 'slidein 1s';
+    setTimeout(setNone, 1000);
 }
 function setPrev(){
     document.getElementById("PrevAnswer").textContent = "PrevAns: "+specific.Answer;
+}
+function setNone(){
+    document.getElementById("PointChange").style.visibility = "hidden";
+    document.getElementById('PointChange').style.animation = 'none';
 }
 function check(){
     if(specific.Answer == document.getElementById("type").value){
@@ -422,6 +430,7 @@ function check(){
 function addPoints(){
     var guess = document.getElementById("type").value
     var multiplier = 0.02 * slider.value;
+    initialPoints = points;
     if(specific.Answer * (1+(1*multiplier)) >= guess && specific.Answer * (1-(1*multiplier))<= guess){
         points += 100*((streak/2)+1);
     } else if((specific.Answer * (1+(1*multiplier)) >= guess && specific.Answer * (1+(2*multiplier)) <= guess)  || (specific.Answer * (1-(1*multiplier)) >= guess && specific.Answer * (1-(2*multiplier)) <= guess)) {
@@ -468,6 +477,12 @@ function addPoints(){
     }else{
         document.documentElement.style.setProperty('--points',  '#ff0000');
     }
+    if(points-initialPoints > 0){
+        document.documentElement.style.setProperty('--points2',  '#00ff00');
+    }else{
+        document.documentElement.style.setProperty('--points2',  '#ff0000');
+    }
+
 }
 slider.oninput = function() {
     var newcolor = (slider.value -1) * 30;

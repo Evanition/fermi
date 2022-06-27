@@ -1,6 +1,7 @@
 :root{
     --main-bg-color: 72;
     --points: green;
+    --points2: green;
 }
 html {
     height:100%;
@@ -54,6 +55,15 @@ body {
     justify-content: center;
     color: var(--points);
 }
+#PointChange {
+    display:flex;
+    position: absolute;
+    top: 11%;
+    right: 10%;
+    justify-content: center;
+    color: var(--points2);
+    visibility: hidden;
+}
 #slides {
     display:flex;
     position: absolute;
@@ -62,7 +72,6 @@ body {
     border: medium dashed green;
     justify-content: center;
     text-shadow: 2px 2px #000000;
-
 }
 #type {
     font-size: 20px;
@@ -78,4 +87,18 @@ form {
 }
 #none {
     display: none;
+}
+@keyframes slidein {
+    0% {
+        transform: translateY(0%);
+        filter: opacity(100%);
+    } 
+    99% {
+        transform: translateY(100%);
+        filter: opacity(0%);
+    }
+    100% {
+        transform: translateY(-100%);
+        filter: opacity(0%);
+    }
 }

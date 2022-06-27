@@ -227,6 +227,7 @@ let maths =
 [
     {"Question":"" + x + " ^ " + y + "", "Answer": Math.floor(Math.log10(Math.pow(x,y))) + ""}
 ]
+let beat = new Audio('/Users/dewaynebarnes/Downloads/ding.mp3');
 let small =
 [
         // use kilograms and cubic meters pls
@@ -242,7 +243,7 @@ let small =
     },
     {
         "name": "brick",
-        "mass": "0.000768",
+        "mass": "3.4",
         "volume": 0.000768,
     },    
     {
@@ -290,6 +291,13 @@ let spheres =
         "volume": 40.6843720 * 10 ** -6,
         "circumfrence": 0.134112,
     },
+    {
+        "name": "basketball",
+        "mass": "0.5863",
+        "volume": 0.011100338639,
+        "circumfrence": 0.75,
+    },
+
 ]
 let distances =
 [
@@ -297,6 +305,10 @@ let distances =
     {
         "name": "Continential United States",
         "length": 5000,
+    },
+    {
+        "name": "Football Feild",
+        "length": 0.09144,
     },
 
 ]
@@ -404,23 +416,27 @@ let custom =
 ]
 function setCustom(){
     s = Math.floor(small.length * Math.random());
+    s2 = Math.floor(small.length * Math.random());
     l = Math.floor(large.length * Math.random());
     sp = Math.floor(spheres.length * Math.random());
     d = Math.floor(distances.length * Math.random());
     so = Math.floor(sounds.length * Math.random());
     so2 = Math.floor(sounds.length * Math.random());
     first = Math.floor(50 * Math.random())/10.0;
+    b = Math.floor(bodies.length * Math.random());
+    b2 = Math.floor(bodies.length * Math.random());
     second = Math.floor(50 * Math.random() + 50)/10.0;
     custom =
     [
         {"Question":"How many " + small[s].name+ "s "+"can fit in the "+large[l].name +" ?", "Answer": Math.floor(Math.log10(large[l].volume/small[s].volume)) + ""},
         {"Question":"How many " + small[s].name+ "s "+"would it take to fill the "+large[l].name +" ?", "Answer": Math.floor(Math.log10(large[l].volume/small[s].volume)) + ""},
         {"Question":"What is the weight of the " + large[l].name + " in " +small[s].name +"s ?", "Answer": Math.floor(Math.log10(large[l].mass/small[s].mass)) + ""},
-        {"Question":"What is the equivelant amount of energy in joules as a " + small[s].name , "Answer": Math.floor(Math.log10(small[s].mass*((3*10**8)**2))) + ""},
+        {"Question":"What is the equivelant amount of energy in joules of a " + small[s].name , "Answer": Math.floor(Math.log10(small[s].mass*((3*10**8)**2))) + ""},
         {"Question":"What is the equivelant amount of energy in joules of the " + large[l].name , "Answer": Math.floor(Math.log10(large[l].mass*((3*10**8)**2))) + ""},
         {"Question":"If a " + spheres[sp].name + " rolled across " +distances[d].name +" how many revolutions would it make?", "Answer": Math.floor(Math.log10((1000*distances[d].length)/spheres[sp].circumfrence)) + ""},
-        {"Question":"How much louder/quieter is a " + sounds[so].name + " than a " + sounds[so2].name +" ?", "Answer": Math.round((sounds[so].decibels-sounds[so2].decibels)/10) + ""},
+        {"Question":"How much louder is " + sounds[so].name + " than a " + sounds[so2].name +" ?", "Answer": Math.round((sounds[so].decibels-sounds[so2].decibels)/10) + ""},
         {"Question":"How much more enrgy is released by a " + second + " magnitude earthquake than a " + first + " ?", "Answer": Math.round(Math.log10((31**(second -first)))) + ""},
+        {"Question":"What would the ratio of weight be between a " + small[s].name + " on " + bodies[b].name + " and a "+ small[s2].name + " on the "+ bodies[b2].name, "Answer": Math.round(Math.log10(small[s].mass*bodies[b].gravity/(small[s2].mass*bodies[b2].gravity))) + ""},
     ]
 }
 function setMath(){
@@ -496,6 +512,7 @@ function addPoints(){
     initialPoints = points;
     if(specific.Answer * (1+(1*multiplier)) >= guess && specific.Answer * (1-(1*multiplier))<= guess){
         points += 100*((streak/2)+1);
+        beat.play();
     } else if((specific.Answer * (1+(1*multiplier)) >= guess && specific.Answer * (1+(2*multiplier)) <= guess)  || (specific.Answer * (1-(1*multiplier)) >= guess && specific.Answer * (1-(2*multiplier)) <= guess)) {
         points += 90;
     } else if((specific.Answer * (1+(2*multiplier)) >= guess && specific.Answer * (1+(3*multiplier)) <= guess)  || (specific.Answer * (1-(2*multiplier)) >= guess && specific.Answer * (1-(3*multiplier)) <= guess)) {

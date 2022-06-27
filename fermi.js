@@ -350,8 +350,8 @@ function setCustom(){
     d = Math.floor(distances.length * Math.random());
     so = Math.floor(sounds.length * Math.random());
     so2 = Math.floor(sounds.length * Math.random());
-    first = Math.floor(5 * Math.random());
-    second = Math.floor(5 * Math.random() + 5);
+    first = Math.floor(50 * Math.random())/10;
+    second = Math.floor(50 * Math.random() + 50)/10;
     custom =
     [
         {"Question":"How many " + small[s].name+ "s "+"can fit in the "+large[l].name +" ?", "Answer": Math.floor(Math.log10(large[l].volume/small[s].volume)) + ""},
@@ -361,7 +361,7 @@ function setCustom(){
         {"Question":"What is the equivelant amount of energy in joules of the " + large[l].name , "Answer": Math.floor(Math.log10(large[l].mass*((3*10**8)**2))) + ""},
         {"Question":"If a " + spheres[sp].name + " rolled across " +distances[d].name +" how many revolutions would it make?", "Answer": Math.floor(Math.log10((1000*distances[d].length)/spheres[sp].circumfrence)) + ""},
         {"Question":"How much louder/quieter is a " + sounds[so].name + " than a " + sounds[so2].name +" ?", "Answer": Math.round((sounds[so].decibels-sounds[so2].decibels)/10) + ""},
-        {"Question":"How much more enrgy is released by a " + second + " magnitude earthquake than a " + first + "?", "Answer": Math.round((second -first)*31) + ""},
+        {"Question":"How much more enrgy is released by a " + second + " magnitude earthquake than a " + first + " ?", "Answer": Math.round((second -first)*31) + ""},
     ]
 }
 function setMath(){

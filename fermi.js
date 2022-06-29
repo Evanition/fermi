@@ -498,10 +498,10 @@ function setNone(){
 }
 function check(){
     if(specific.Answer == document.getElementById("type").value){
-        document.getElementById("Question").style.borderColor = '#00ff00';
+        document.getElementById("Question").style.boxShadow = ' 0 0 30px #00ff00';
         streak++;
     } else {
-        document.getElementById("Question").style.borderColor = "#ff0000";
+        document.getElementById("Question").style.boxShadow = "  0 0 30px #ff0000";
         streak = 0;
     }
     addPoints();

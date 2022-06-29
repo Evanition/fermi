@@ -3,9 +3,12 @@
     --points: green;
     --points2: green;
 }
+*{
+    background-color: #000000;
+}
 html {
     height:100%;
-    font-size: 50px;
+    font-size: 6vw;
 }
 body {
     position: relative;
@@ -18,32 +21,36 @@ body {
     display:flex;
     position: absolute;
     top: 30%;
-    border: medium dashed green;
+    box-shadow: 0 0 30px green;
+    border-radius: 5%;
     margin:5%;
-
+    text-align: center;
+    color: white;
+    font-size: 4vw;
 }
 #Answer {
     display:flex;
     position: absolute;
     top: 70%;
-    border: medium dashed green;
     justify-content: center;
+    color: white;
 }
 #PrevAnswer {
     display:flex;
     position: absolute;
-    top: 70%;
+    top: 65%;
     left:10%;
-    border: medium dashed green;
     justify-content: center;
+    color: white;
+    background-color: transparent;
 }
 #Streak {
     display:flex;
     position: absolute;
     top: 10%;
     Left: 10%;
-    border: medium dashed green;
     justify-content: center;
+    color: white;
     
 }
 #Points {
@@ -51,7 +58,6 @@ body {
     position: absolute;
     top: 10%;
     right: 10%;
-    border: medium dashed green;
     justify-content: center;
     color: var(--points);
 }
@@ -63,20 +69,32 @@ body {
     justify-content: center;
     color: var(--points2);
     visibility: hidden;
+    background-color: transparent;
 }
 #slides {
     display:flex;
     position: absolute;
-    top: 10%;
+    top: 15%;
     color: hsl(var(--main-bg-color), 100%, 50%);
-    border: medium dashed green;
     justify-content: center;
-    text-shadow: 2px 2px #000000;
+    background-color: transparent;
 }
 #type {
+    border: solid #5B6DCD 3px;
     font-size: 20px;
     height:20%;
-    width:100%
+    width:100%;
+    border-radius: 25%;
+    color:white;
+    background-color: transparent;
+}
+p {
+    background-color: transparent;
+}
+#type:focus { 
+    outline: none;
+    border-color: #9ecaed;
+    box-shadow: 0 0 30px #9ecaed;
 }
 form {
     width:10%;

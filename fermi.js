@@ -505,64 +505,156 @@ function check(){
     }
     addPoints();
 }
-function addPoints(){
+function addPoints() {
     var guess = document.getElementById("type").value
     var multiplier = 0.02 * slider.value;
     initialPoints = points;
     specific.Answer = parseInt(specific.Answer);
-    if(guess >= specific.Answer){
-        if(guess * (1-(1*multiplier)) <= specific.Answer){
-            points += 100*((streak/2)+1);
+    if ((guess >= specific.Answer && guess >= 0 && specific.Answer >= 0)) {
+        if (guess * (1 - (1 * multiplier)) <= specific.Answer) {
+            points += 100 * ((streak / 2) + 1);
             beat.play();
             document.getElementById("Question").style.boxShadow = ' 0 0 30px #00ff00';
-        } else if(guess * (1-(2*multiplier)) <= specific.Answer) {
+        } else if (guess * (1 - (2 * multiplier)) <= specific.Answer) {
             points += 90;
-        } else if(guess * (1-(3*multiplier)) <= specific.Answer){
+        } else if (guess * (1 - (3 * multiplier)) <= specific.Answer) {
             points += 80;
-        } else if(guess * (1-(4*multiplier)) <= specific.Answer){
+        } else if (guess * (1 - (4 * multiplier)) <= specific.Answer) {
             points += 70;
-        } else if(guess * (1-(5*multiplier)) <= specific.Answer){
+        } else if (guess * (1 - (5 * multiplier)) <= specific.Answer) {
             points += 60;
-        } else if(guess * (1-(6*multiplier)) <= specific.Answer){
+        } else if (guess * (1 - (6 * multiplier)) <= specific.Answer) {
             points += 50;
-        } else if(guess * (1-(7*multiplier)) <= specific.Answer){
+        } else if (guess * (1 - (7 * multiplier)) <= specific.Answer) {
             points += 40;
-        } else if(guess * (1-(8*multiplier)) <= specific.Answer){
+        } else if (guess * (1 - (8 * multiplier)) <= specific.Answer) {
             points += 30;
-        } else if(guess * (1-(9*multiplier)) <= specific.Answer){
+        } else if (guess * (1 - (9 * multiplier)) <= specific.Answer) {
             points += 20;
-        } else if(guess * (1-(10*multiplier)) <= specific.Answer) {
+        } else if (guess * (1 - (10 * multiplier)) <= specific.Answer) {
             points += 10;
-        } else if(guess * (1-(11*multiplier)) <= specific.Answer) {
+        } else if (guess * (1 - (11 * multiplier)) <= specific.Answer) {
             points += 0;
-        } else if(guess * (1-(12*multiplier)) <= specific.Answer) {
+        } else if (guess * (1 - (12 * multiplier)) <= specific.Answer) {
             points -= 10;
-        } else if(guess * (1-(13*multiplier)) <= specific.Answer) {
+        } else if (guess * (1 - (13 * multiplier)) <= specific.Answer) {
             points -= 20;
-        } else if(guess * (1-(14*multiplier)) <= specific.Answer) {
+        } else if (guess * (1 - (14 * multiplier)) <= specific.Answer) {
             points -= 30;
-        } else if(guess * (1-(15*multiplier)) <= specific.Answer) {
+        } else if (guess * (1 - (15 * multiplier)) <= specific.Answer) {
             points -= 40;
-        } else if(guess * (1-(16*multiplier)) <= specific.Answer) {
+        } else if (guess * (1 - (16 * multiplier)) <= specific.Answer) {
             points -= 50;
-        } else if(guess * (1-(17*multiplier)) <= specific.Answer) {
+        } else if (guess * (1 - (17 * multiplier)) <= specific.Answer) {
             points -= 60;
-        } else if(guess * (1-(18*multiplier)) <= specific.Answer) {
+        } else if (guess * (1 - (18 * multiplier)) <= specific.Answer) {
             points -= 70;
-        } else if(guess * (1-(19*multiplier)) <= specific.Answer) {
+        } else if (guess * (1 - (19 * multiplier)) <= specific.Answer) {
             points -= 80;
-        } else if(guess * (1-(20*multiplier)) <= specific.Answer) {
+        } else if (guess * (1 - (20 * multiplier)) <= specific.Answer) {
             points -= 90;
         } else {
             points -= 100;
         }
-        console.log("greater");
-        console.log(typeof(specific.Answer))
+    } else if (guess <= specific.Answer && guess <= 0 && specific.Answer <= 0) {
+        if (guess * (1 - (1 * multiplier)) >= specific.Answer) {
+            points += 100 * ((streak / 2) + 1);
+            beat.play();
+            document.getElementById("Question").style.boxShadow = ' 0 0 30px #00ff00';
+        } else if (guess * (1 - (2 * multiplier)) >= specific.Answer) {
+            points += 90;
+        } else if (guess * (1 - (3 * multiplier)) >= specific.Answer) {
+            points += 80;
+        } else if (guess * (1 - (4 * multiplier)) >= specific.Answer) {
+            points += 70;
+        } else if (guess * (1 - (5 * multiplier)) >= specific.Answer) {
+            points += 60;
+        } else if (guess * (1 - (6 * multiplier)) >= specific.Answer) {
+            points += 50;
+        } else if (guess * (1 - (7 * multiplier)) >= specific.Answer) {
+            points += 40;
+        } else if (guess * (1 - (8 * multiplier)) >= specific.Answer) {
+            points += 30;
+        } else if (guess * (1 - (9 * multiplier)) >= specific.Answer) {
+            points += 20;
+        } else if (guess * (1 - (10 * multiplier)) >= specific.Answer) {
+            points += 10;
+        } else if (guess * (1 - (11 * multiplier)) >= specific.Answer) {
+            points += 0;
+        } else if (guess * (1 - (12 * multiplier)) >= specific.Answer) {
+            points -= 10;
+        } else if (guess * (1 - (13 * multiplier)) >= specific.Answer) {
+            points -= 20;
+        } else if (guess * (1 - (14 * multiplier)) >= specific.Answer) {
+            points -= 30;
+        } else if (guess * (1 - (15 * multiplier)) >= specific.Answer) {
+            points -= 40;
+        } else if (guess * (1 - (16 * multiplier)) >= specific.Answer) {
+            points -= 50;
+        } else if (guess * (1 - (17 * multiplier)) >= specific.Answer) {
+            points -= 60;
+        } else if (guess * (1 - (18 * multiplier)) >= specific.Answer) {
+            points -= 70;
+        } else if (guess * (1 - (19 * multiplier)) >= specific.Answer) {
+            points -= 80;
+        } else if (guess * (1 - (20 * multiplier)) >= specific.Answer) {
+            points -= 90;
+        } else {
+            points -= 100;
+        }
+    } else if (guess >= specific.Answer && guess <= 0 && specific.Answer <= 0) {
+        if (guess * (1 + (1 * multiplier)) <= specific.Answer) {
+            points += 100 * ((streak / 2) + 1);
+            beat.play();
+            document.getElementById("Question").style.boxShadow = ' 0 0 30px #00ff00';
+        } else if (guess * (1 + (2 * multiplier)) <= specific.Answer) {
+            points += 90;
+        } else if (guess * (1 + (3 * multiplier)) <= specific.Answer) {
+            points += 80;
+        } else if (guess * (1 + (4 * multiplier)) <= specific.Answer) {
+            points += 70;
+        } else if (guess * (1 + (5 * multiplier)) >= specific.Answer) {
+            points += 60;
+        } else if (guess * (1 + (6 * multiplier)) <= specific.Answer) {
+            points += 50;
+        } else if (guess * (1 + (7 * multiplier)) <= specific.Answer) {
+            points += 40;
+        } else if (guess * (1 + (8 * multiplier)) <= specific.Answer) {
+            points += 30;
+        } else if (guess * (1 + (9 * multiplier)) <= specific.Answer) {
+            points += 20;
+        } else if (guess * (1 + (10 * multiplier)) <= specific.Answer) {
+            points += 10;
+        } else if (guess * (1 + (11 * multiplier)) <= specific.Answer) {
+            points += 0;
+        } else if (guess * (1 + (12 * multiplier)) <= specific.Answer) {
+            points -= 10;
+        } else if (guess * (1 + (13 * multiplier)) <= specific.Answer) {
+            points -= 20;
+        } else if (guess * (1 + (14 * multiplier)) <= specific.Answer) {
+            points -= 30;
+        } else if (guess * (1 + (15 * multiplier)) <= specific.Answer) {
+            points -= 40;
+        } else if (guess * (1 + (16 * multiplier)) <= specific.Answer) {
+            points -= 50;
+        } else if (guess * (1 + (17 * multiplier)) <= specific.Answer) {
+            points -= 60;
+        } else if (guess * (1 + (18 * multiplier)) <= specific.Answer) {
+            points -= 70;
+        } else if (guess * (1 + (19 * multiplier)) <= specific.Answer) {
+            points -= 80;
+        } else if (guess * (1 + (20 * multiplier)) <= specific.Answer) {
+            points -= 90;
+        } else {
+            points -= 100;
+        }
+    } else if ((guess > 0 && specific.Answer < 0) || (guess < 0 && specific.Answer > 0)) {
+        points -= 100;
     } else {
         if(guess * (1+(1*multiplier)) >= specific.Answer){
             points += 100*((streak/2)+1);
             beat.play();
-            document.getElementById("Question").style.boxShadow = ' 0 0 30px #00ff00';
+            document.getElementById("Question").style.boxShadow = ' 0 0 30px #90EE90';
         } else if(guess * (1+(2*multiplier)) >= specific.Answer) {
             points += 90;
         } else if(guess * (1+(3*multiplier)) >= specific.Answer){
@@ -604,22 +696,28 @@ function addPoints(){
         } else {
             points -= 100;
         }
-        console.log("less");
     }
     if(points > 0){
-        document.documentElement.style.setProperty('--points',  '#00ff00');
+        document.documentElement.style.setProperty('--points',  '#90EE90');
     }else{
-        document.documentElement.style.setProperty('--points',  '#ff0000');
+        document.documentElement.style.setProperty('--points',  '#FF7276');
     }
     if(points-initialPoints >= 0){
-        document.documentElement.style.setProperty('--points2',  '#00ff00');
+        document.documentElement.style.setProperty('--points2',  '#90EE90');
     }else{
-        document.documentElement.style.setProperty('--points2',  '#ff0000');
+        document.documentElement.style.setProperty('--points2',  '#FF7276');
     }
-    console.log("Guess "+ guess+ " answer "+specific.Answer+" points "+ (points-initialPoints));
 }
 slider.oninput = function() {
     var newcolor = (slider.value -1) * 30;
     document.documentElement.style.setProperty('--main-bg-color', newcolor);
 }
+window.addEventListener("mousemove", e => {
+    let xPos = e.clientX;
+    let yPos = e.clientY;
+    let height = window.innerHeight;
+    document.documentElement.style.setProperty('--hue', xPos/2 + "deg");
+    document.documentElement.style.setProperty('--light', (yPos/height * 100) + "%");
+
+})
 

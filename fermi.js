@@ -568,4 +568,8 @@ slider.oninput = function() {
     var newcolor = (slider.value -1) * 30;
     document.documentElement.style.setProperty('--main-bg-color', newcolor);
 }
+document.getElementById('none').addEventListener('submit', function(e) {
+    search(document.getElementById('guess'));
+    e.preventDefault();
+}, false);
 

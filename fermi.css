@@ -32,7 +32,7 @@ body {
 #Answer {
     display:flex;
     position: absolute;
-    top: 80%;
+    top: 75%;
     justify-content: center;
     color: white;
     background-color: transparent;
@@ -40,7 +40,7 @@ body {
 #PrevAnswer {
     display:flex;
     position: absolute;
-    top: 90%;
+    top: 85%;
     right:10%;
     justify-content: center;
     color: lightblue;
@@ -76,7 +76,7 @@ body {
 #slides {
     display:flex;
     position: absolute;
-    top: 15%;
+    top: 13%;
     color: hsl(var(--main-bg-color), 100%, 50%);
     justify-content: center;
     background-color: transparent;

@@ -411,7 +411,7 @@ s = Math.floor(small.length * Math.random());
 l = Math.floor(large.length * Math.random());
 let custom = 
 [ 
-    {"Question":"How many " + small[s].name+ "s "+" can fit in the "+large[l].name, "Answer": Math.floor(Math.log10(large[l].volume/small[s].volume)) + ""}
+    {"Question":"How many " + small[s].name+ "s "+" can fit in the "+large[l].name, "Answer": Math.floor(Math.log10(large[l].volume/small[s].volume))}
 ]
 function setCustom(){
     s = Math.floor(small.length * Math.random());
@@ -427,15 +427,15 @@ function setCustom(){
     second = Math.floor(50 * Math.random() + 50)/10.0;
     custom =
     [
-        {"Question":"How many " + small[s].name+ "s "+"can fit in the "+large[l].name +" ?", "Answer": Math.floor(Math.log10(large[l].volume/small[s].volume)) + ""},
-        {"Question":"How many " + small[s].name+ "s "+"would it take to fill the "+large[l].name +" ?", "Answer": Math.floor(Math.log10(large[l].volume/small[s].volume)) + ""},
-        {"Question":"What is the weight of the " + large[l].name + " in " +small[s].name +"s ?", "Answer": Math.floor(Math.log10(large[l].mass/small[s].mass)) + ""},
-        {"Question":"What is the equivelant amount of energy in joules of a " + small[s].name , "Answer": Math.floor(Math.log10(small[s].mass*((3*10**8)**2))) + ""},
-        {"Question":"What is the equivelant amount of energy in joules of the " + large[l].name , "Answer": Math.floor(Math.log10(large[l].mass*((3*10**8)**2))) + ""},
-        {"Question":"If a " + spheres[sp].name + " rolled across " +distances[d].name +" how many revolutions would it make?", "Answer": Math.floor(Math.log10((1000*distances[d].length)/spheres[sp].circumfrence)) + ""},
-        {"Question":"How much louder is " + sounds[so].name + " than a " + sounds[so2].name +" ?", "Answer": Math.round((sounds[so].decibels-sounds[so2].decibels)/10) + ""},
-        {"Question":"How much more enrgy is released by a " + second + " magnitude earthquake than a " + first + " ?", "Answer": Math.round(Math.log10((31**(second -first)))) + ""},
-        {"Question":"What would the ratio of weight be between a " + small[s].name + " on " + bodies[b].name + " and a "+ small[s2].name + " on the "+ bodies[b2].name, "Answer": Math.round(Math.log10(small[s].mass*bodies[b].gravity/(small[s2].mass*bodies[b2].gravity))) + ""},
+        {"Question":"How many " + small[s].name+ "s "+"can fit in the "+large[l].name +" ?", "Answer": Math.floor(Math.log10(large[l].volume/small[s].volume))},
+        {"Question":"How many " + small[s].name+ "s "+"would it take to fill the "+large[l].name +" ?", "Answer": Math.floor(Math.log10(large[l].volume/small[s].volume))},
+        {"Question":"What is the weight of the " + large[l].name + " in " +small[s].name +"s ?", "Answer": Math.floor(Math.log10(large[l].mass/small[s].mass))},
+        {"Question":"What is the equivelant amount of energy in joules of a " + small[s].name , "Answer": Math.floor(Math.log10(small[s].mass*((3*10**8)**2)))},
+        {"Question":"What is the equivelant amount of energy in joules of the " + large[l].name , "Answer": Math.floor(Math.log10(large[l].mass*((3*10**8)**2)))},
+        {"Question":"If a " + spheres[sp].name + " rolled across " +distances[d].name +" how many revolutions would it make?", "Answer": Math.floor(Math.log10((1000*distances[d].length)/spheres[sp].circumfrence))},
+        {"Question":"How much louder is " + sounds[so].name + " than a " + sounds[so2].name +" ?", "Answer": Math.round((sounds[so].decibels-sounds[so2].decibels)/10)},
+        {"Question":"How much more enrgy is released by a " + second + " magnitude earthquake than a " + first + " ?", "Answer": Math.round(Math.log10((31**(second -first))))},
+        {"Question":"What would the ratio of weight be between a " + small[s].name + " on " + bodies[b].name + " and a "+ small[s2].name + " on the "+ bodies[b2].name, "Answer": Math.round(Math.log10(small[s].mass*bodies[b].gravity/(small[s2].mass*bodies[b2].gravity)))},
     ]
 }
 function setMath(){
@@ -443,8 +443,8 @@ function setMath(){
     y = Math.floor(100*Math.random()+1);
     maths =
     [
-        {"Question":x + " ^ " + y, "Answer": Math.floor(Math.log10(x**y)) + ""},
-        {"Question":x + "!", "Answer": Math.floor(Math.log10(factorialize(x))) + ""}
+        {"Question":x + " ^ " + y, "Answer": Math.floor(Math.log10(x**y))},
+        {"Question":x + "!", "Answer": Math.floor(Math.log10(factorialize(x)))}
     ]
 }
 
@@ -509,48 +509,102 @@ function addPoints(){
     var guess = document.getElementById("type").value
     var multiplier = 0.02 * slider.value;
     initialPoints = points;
-    if(specific.Answer * (1+(1*multiplier)) >= guess && specific.Answer * (1-(1*multiplier))<= guess){
-        points += 100*((streak/2)+1);
-        beat.play();
-        document.getElementById("Question").style.boxShadow = ' 0 0 30px #00ff00';
-    } else if((specific.Answer * (1+(1*multiplier)) >= guess && specific.Answer * (1+(2*multiplier)) <= guess)  || (specific.Answer * (1-(1*multiplier)) >= guess && specific.Answer * (1-(2*multiplier)) <= guess)) {
-        points += 90;
-    } else if((specific.Answer * (1+(2*multiplier)) >= guess && specific.Answer * (1+(3*multiplier)) <= guess)  || (specific.Answer * (1-(2*multiplier)) >= guess && specific.Answer * (1-(3*multiplier)) <= guess)) {
-        points += 80;
-    } else if((specific.Answer * (1+(3*multiplier)) >= guess && specific.Answer * (1+(4*multiplier)) <= guess)  || (specific.Answer * (1-(3*multiplier)) >= guess && specific.Answer * (1-(4*multiplier)) <= guess)) {
-        points += 70;
-    } else if((specific.Answer * (1+(4*multiplier)) >= guess && specific.Answer * (1+(5*multiplier)) <= guess)  || (specific.Answer * (1-(4*multiplier)) >= guess && specific.Answer * (1-(5*multiplier)) <= guess)) {
-        points += 60;
-    } else if((specific.Answer * (1+(5*multiplier)) >= guess && specific.Answer * (1+(6*multiplier)) <= guess)  || (specific.Answer * (1-(5*multiplier)) >= guess && specific.Answer * (1-(6*multiplier)) <= guess)) {
-        points += 50;
-    } else if((specific.Answer * (1+(6*multiplier)) >= guess && specific.Answer * (1+(7*multiplier)) <= guess)  || (specific.Answer * (1-(6*multiplier)) >= guess && specific.Answer * (1-(7*multiplier)) <= guess)) {
-        points += 40;
-    } else if((specific.Answer * (1+(7*multiplier)) >= guess && specific.Answer * (1+(8*multiplier)) <= guess)  || (specific.Answer * (1-(7*multiplier)) >= guess && specific.Answer * (1-(8*multiplier)) <= guess)) {
-        points += 30;
-    } else if((specific.Answer * (1+(8*multiplier)) >= guess && specific.Answer * (1+(9*multiplier)) <= guess)  || (specific.Answer * (1-(8*multiplier)) >= guess && specific.Answer * (1-(9*multiplier)) <= guess)) {
-        points += 20;
-    } else if((specific.Answer * (1+(9*multiplier)) >= guess && specific.Answer * (1+(10*multiplier)) <= guess)  || (specific.Answer * (1-(9*multiplier)) >= guess && specific.Answer * (1-(10*multiplier)) <= guess)) {
-        points += 10;
-    } else if((specific.Answer * (1+(10*multiplier)) >= guess && specific.Answer * (1+(11*multiplier)) <= guess)  || (specific.Answer * (1-(10*multiplier)) >= guess && specific.Answer * (1-(11*multiplier)) <= guess)) {
-        points += 0;
-    } else if((specific.Answer * (1+(11*multiplier)) >= guess && specific.Answer * (1+(12*multiplier)) <= guess)  || (specific.Answer * (1-(11*multiplier)) >= guess && specific.Answer * (1-(12*multiplier)) <= guess)) {
-        points -= 10;
-    } else if((specific.Answer * (1+(12*multiplier)) >= guess && specific.Answer * (1+(13*multiplier)) <= guess)  || (specific.Answer * (1-(12*multiplier)) >= guess && specific.Answer * (1-(13*multiplier)) <= guess)) {
-        points -= 20;
-    } else if((specific.Answer * (1+(13*multiplier)) >= guess && specific.Answer * (1+(14*multiplier)) <= guess)  || (specific.Answer * (1-(13*multiplier)) >= guess && specific.Answer * (1-(14*multiplier)) <= guess)) {
-        points -= 30;
-    } else if((specific.Answer * (1+(14*multiplier)) >= guess && specific.Answer * (1+(15*multiplier)) <= guess)  || (specific.Answer * (1-(14*multiplier)) >= guess && specific.Answer * (1-(15*multiplier)) <= guess)) {
-        points -= 40;
-    } else if((specific.Answer * (1+(15*multiplier)) >= guess && specific.Answer * (1+(16*multiplier)) <= guess)  || (specific.Answer * (1-(15*multiplier)) >= guess && specific.Answer * (1-(16*multiplier)) <= guess)) {
-        points -= 50;
-    } else if((specific.Answer * (1+(16*multiplier)) >= guess && specific.Answer * (1-(17*multiplier)) <= guess)  || (specific.Answer * (1-(16*multiplier)) >= guess && specific.Answer * (1-(17*multiplier)) <= guess)) {
-        points -= 60;
-    } else if((specific.Answer * (1+(17*multiplier)) >= guess && specific.Answer * (1+(18*multiplier)) <= guess)  || (specific.Answer * (1-(17*multiplier)) >= guess && specific.Answer * (1-(18*multiplier)) <= guess)) {
-        points -= 70;
-    } else if((specific.Answer * (1+(18*multiplier)) >= guess && specific.Answer * (1+(19*multiplier)) <= guess)  || (specific.Answer * (1-(18*multiplier)) >= guess && specific.Answer * (1-(19*multiplier)) <= guess)) {
-        points -= 80;
+    specific.Answer = parseInt(specific.Answer);
+    if(guess >= specific.Answer){
+        if(guess * (1-(1*multiplier)) <= specific.Answer){
+            points += 100*((streak/2)+1);
+            beat.play();
+            document.getElementById("Question").style.boxShadow = ' 0 0 30px #00ff00';
+        } else if(guess * (1-(2*multiplier)) <= specific.Answer) {
+            points += 90;
+        } else if(guess * (1-(3*multiplier)) <= specific.Answer){
+            points += 80;
+        } else if(guess * (1-(4*multiplier)) <= specific.Answer){
+            points += 70;
+        } else if(guess * (1-(5*multiplier)) <= specific.Answer){
+            points += 60;
+        } else if(guess * (1-(6*multiplier)) <= specific.Answer){
+            points += 50;
+        } else if(guess * (1-(7*multiplier)) <= specific.Answer){
+            points += 40;
+        } else if(guess * (1-(8*multiplier)) <= specific.Answer){
+            points += 30;
+        } else if(guess * (1-(9*multiplier)) <= specific.Answer){
+            points += 20;
+        } else if(guess * (1-(10*multiplier)) <= specific.Answer) {
+            points += 10;
+        } else if(guess * (1-(11*multiplier)) <= specific.Answer) {
+            points += 0;
+        } else if(guess * (1-(12*multiplier)) <= specific.Answer) {
+            points -= 10;
+        } else if(guess * (1-(13*multiplier)) <= specific.Answer) {
+            points -= 20;
+        } else if(guess * (1-(14*multiplier)) <= specific.Answer) {
+            points -= 30;
+        } else if(guess * (1-(15*multiplier)) <= specific.Answer) {
+            points -= 40;
+        } else if(guess * (1-(16*multiplier)) <= specific.Answer) {
+            points -= 50;
+        } else if(guess * (1-(17*multiplier)) <= specific.Answer) {
+            points -= 60;
+        } else if(guess * (1-(18*multiplier)) <= specific.Answer) {
+            points -= 70;
+        } else if(guess * (1-(19*multiplier)) <= specific.Answer) {
+            points -= 80;
+        } else if(guess * (1-(20*multiplier)) <= specific.Answer) {
+            points -= 90;
+        } else {
+            points -= 100;
+        }
+        console.log("greater");
+        console.log(typeof(specific.Answer))
     } else {
-        points -= 100;
+        if(guess * (1+(1*multiplier)) >= specific.Answer){
+            points += 100*((streak/2)+1);
+            beat.play();
+            document.getElementById("Question").style.boxShadow = ' 0 0 30px #00ff00';
+        } else if(guess * (1+(2*multiplier)) >= specific.Answer) {
+            points += 90;
+        } else if(guess * (1+(3*multiplier)) >= specific.Answer){
+            points += 80;
+        } else if(guess * (1+(4*multiplier)) >= specific.Answer){
+            points += 70;
+        } else if(guess * (1+(5*multiplier)) >= specific.Answer){
+            points += 60;
+        } else if(guess * (1+(6*multiplier)) >= specific.Answer){
+            points += 50;
+        } else if(guess * (1+(7*multiplier)) >= specific.Answer){
+            points += 40;
+        } else if(guess * (1+(8*multiplier)) >= specific.Answer){
+            points += 30;
+        } else if(guess * (1+(9*multiplier)) >= specific.Answer){
+            points += 20;
+        } else if(guess * (1+(10*multiplier)) >= specific.Answer) {
+            points += 10;
+        } else if(guess * (1+(11*multiplier)) >= specific.Answer) {
+            points += 0;
+        } else if(guess * (1+(12*multiplier)) >= specific.Answer) {
+            points -= 10;
+        } else if(guess * (1+(13*multiplier)) >= specific.Answer) {
+            points -= 20;
+        } else if(guess * (1+(14*multiplier)) >= specific.Answer) {
+            points -= 30;
+        } else if(guess * (1+(15*multiplier)) >= specific.Answer) {
+            points -= 40;
+        } else if(guess * (1+(16*multiplier)) >= specific.Answer) {
+            points -= 50;
+        } else if(guess * (1+(17*multiplier)) >= specific.Answer) {
+            points -= 60;
+        } else if(guess * (1+(18*multiplier)) >= specific.Answer) {
+            points -= 70;
+        } else if(guess * (1+(19*multiplier)) >= specific.Answer) {
+            points -= 80;
+        } else if(guess * (1+(20*multiplier)) >= specific.Answer) {
+            points -= 90;
+        } else {
+            points -= 100;
+        }
+        console.log("less");
     }
     if(points > 0){
         document.documentElement.style.setProperty('--points',  '#00ff00');
@@ -562,7 +616,7 @@ function addPoints(){
     }else{
         document.documentElement.style.setProperty('--points2',  '#ff0000');
     }
-
+    console.log("Guess "+ guess+ " answer "+specific.Answer+" points "+ (points-initialPoints));
 }
 slider.oninput = function() {
     var newcolor = (slider.value -1) * 30;

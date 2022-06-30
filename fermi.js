@@ -513,6 +513,7 @@ function addPoints(){
     if(specific.Answer * (1+(1*multiplier)) >= guess && specific.Answer * (1-(1*multiplier))<= guess){
         points += 100*((streak/2)+1);
         beat.play();
+        document.getElementById("Question").style.boxShadow = ' 0 0 30px #00ff00';
     } else if((specific.Answer * (1+(1*multiplier)) >= guess && specific.Answer * (1+(2*multiplier)) <= guess)  || (specific.Answer * (1-(1*multiplier)) >= guess && specific.Answer * (1-(2*multiplier)) <= guess)) {
         points += 90;
     } else if((specific.Answer * (1+(2*multiplier)) >= guess && specific.Answer * (1+(3*multiplier)) <= guess)  || (specific.Answer * (1-(2*multiplier)) >= guess && specific.Answer * (1-(3*multiplier)) <= guess)) {
@@ -568,8 +569,4 @@ slider.oninput = function() {
     var newcolor = (slider.value -1) * 30;
     document.documentElement.style.setProperty('--main-bg-color', newcolor);
 }
-document.getElementById('none').addEventListener('submit', function(e) {
-    search(document.getElementById('guess'));
-    e.preventDefault();
-}, false);
 

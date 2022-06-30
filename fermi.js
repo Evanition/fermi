@@ -201,7 +201,6 @@ let questions =
     {"Question":"What is the number of somatic cells in a 49 day old, normally developing fetus?", "Answer":"2"},
     {"Question":"How many genes are currently considered part of the human genome?", "Answer":"4"},
     {"Question":"If the earth became 10X denser than it was originally, what would the radius of earth have to be (meters) to have the same gravitational attraction?", "Answer":"6"},
-    {"Question":"What is 1,000,000!", "Answer":"5565709"},
     {"Question":"If an object with the mass of the sun had the radius of planck's length what is its escape velocity?", "Answer":"27"},
     {"Question":"How many photons of light does the sun emit in a second?", "Answer":"45"},
     {"Question":"If a 220 lb man runs at the speed of light, how many Calories of energy will be used?", "Answer":"15"},

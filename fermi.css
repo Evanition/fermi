@@ -6,7 +6,7 @@
     --light: 100%;
 }
 *{
-    background-color: hsl(var(--hue), 50% ,var(--light));
+    background-color: hsl(calc((var(--hue)/9)), 50% ,var(--light));
 }
 html {
     height:100%;
@@ -88,7 +88,7 @@ body {
 #slides {
     display:flex;
     position: absolute;
-    top: 13%;
+    top: 18%;
     color: hsl(var(--main-bg-color), 100%, 50%);
     justify-content: center;
     background-color: transparent;
@@ -166,8 +166,8 @@ input[type=range] {
     margin-top: 30%;
 }
 input[type=range]::-webkit-slider-runnable-track {
-    width: 100%;
-    height: 1.2vw;
+    width: 1.5vw;
+    height: 1.3vw;
     cursor: pointer;
     background: blue;
     border-radius: 30%;
@@ -190,4 +190,5 @@ input[type=range]::-webkit-slider-thumb {
     display: flex;
     justify-items: center;
     align-items: center;
+    background-color: transparent;
 }

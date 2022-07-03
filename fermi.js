@@ -234,21 +234,25 @@ let small =
         "name": "Iphone",
         "mass": "0.112",
         "volume": "0.000055135568",
+        "preposition": "an",
     },
     {
         "name": "feather",
         "mass": "1.9",
-        "volume": 2* 10**-6,
+        "volume": 2 * 10 ** -6,
+        "preposition": "a",
     },
     {
         "name": "brick",
         "mass": "3.4",
         "volume": 0.000768,
+        "preposition": "a",
     },    
     {
         "name": "pencil",
         "mass": "0.008",
-        "volume": 7 * 10**-6,
+        "volume": 7 * 10 ** -6,
+        "preposition": "a",
     },
 ]
 let large =
@@ -257,22 +261,27 @@ let large =
     {
         "name": "Sun",
         "mass": 1.989 * 10**30,
-        "volume": 1.4 * 10**27,
+        "volume": 1.4 * 10 ** 27,
+        "preposition": "the",
+
     },
     {
         "name": "Moon",
         "mass": 7.34767309  * 10**22,
-        "volume": 2.19 * 10**19,
+        "volume": 2.19 * 10 ** 19,
+        "preposition": "the",
     },
     {
         "name": "Eiffel Tower",
         "mass": 7341214,
         "volume": 930,
+        "preposition": "the",
     },
     {
         "name": "Mount Everest",
         "mass": 810 * 10**9,
         "volume": 1400000000000,
+        "preposition": "",
     },
 ]
 let spheres =
@@ -283,18 +292,21 @@ let spheres =
         "mass": 0.0577,
         "volume": 0.000131097,
         "circumfrence": 0.21,
+        "preposition": "a",
     },
     {
         "name": "golf ball",
         "mass": "0.04569",
         "volume": 40.6843720 * 10 ** -6,
         "circumfrence": 0.134112,
+        "preposition": "a",
     },
     {
         "name": "basketball",
         "mass": "0.5863",
         "volume": 0.011100338639,
         "circumfrence": 0.75,
+        "preposition": "a",
     },
 
 ]
@@ -304,12 +316,13 @@ let distances =
     {
         "name": "Continential United States",
         "length": 5000,
+        "preposition": "the",
     },
     {
         "name": "Football Feild",
         "length": 0.09144,
+        "preposition": "a",
     },
-
 ]
 let sounds =
 [
@@ -317,34 +330,72 @@ let sounds =
     {
         "name": "ticking watch",
         "decibels": 20,
+        "preposition": "a",
     },
     {
         "name": "whisper",
         "decibels": 30,
+        "preposition": "a",
     },
     {
         "name": "average room noise",
         "decibels": 40,
+        "preposition": "",
     },
     {
         "name": "rainfall",
         "decibels": 50,
+        "preposition": "",
     },
     {
         "name": "background music",
         "decibels": 60,
+        "preposition": "",
     },
     {
         "name": "normal conversation",
         "decibels": 60,
+        "preposition": "a",
     },
     {
         "name": "average office noise",
         "decibels": 70,
+        "preposition": "",
     },
     {
         "name": "thunder",
         "decibels": 120,
+        "preposition": "",
+    },
+    {
+        "name": "vacuum",
+        "decibels": 70,
+        "preposition": "a",
+    },
+    {
+        "name": "dishwasher",
+        "decibels": 75,
+        "preposition": "a",
+    },
+    {
+        "name": "refridgerator",
+        "decibels": 75,
+        "preposition": "a",
+    },
+    {
+        "name": "heavy traffic",
+        "decibels": 85,
+        "preposition": "",
+    },
+    {
+        "name": "rock concert",
+        "decibels": 110,
+        "preposition": "a",
+    },
+    {
+        "name": "ambulance siren",
+        "decibels": 120,
+        "preposition": "an",
     },
 ]
 let bodies =
@@ -355,54 +406,63 @@ let bodies =
         "mass": 3.285 * 10**23 ,
         "volume": 6.08 * 10**19,
         "gravity": 3.7,
+        "preposition": "",
     },
     {
         "name": "Venus",
         "mass": 4.867 * 10**24 ,
         "volume": 9.2843 * 10**20,
         "gravity": 3.7,
+        "preposition": "",
     },
     {
         "name": "Earth",
         "mass": 5.97 * 10**24 ,
         "volume": 1.08321 * 10**21,
         "gravity": 9.8,
+        "preposition": "",
     },
     {
         "name": "Mars",
         "mass": 0.642 * 10**24 ,
         "volume": 1.6318 * 10**20,
         "gravity": 1.6,
+        "preposition": "",
     },
     {
         "name": "Jupiter",
         "mass": 1898 * 10**24 ,
         "volume": 1.43128 * 10**24,
         "gravity": 23.1,
+        "preposition": "",
     },
     {
         "name": "Saturn",
         "mass": 568 * 10**24 ,
         "volume": 8.2713 * 10**23,
         "gravity": 9.0,
+        "preposition": "",
     },
     {
         "name": "Uranus",
         "mass": 86.8 * 10**24 ,
         "volume": 6.833 * 10**22,
         "gravity": 8.7,
+        "preposition": "",
     },
     {
         "name": "Neptune",
         "mass": 102 * 10**24 ,
         "volume": 6.254 * 10**22,
         "gravity": 11.0,
+        "preposition": "",
     },
     {
         "name": "Pluto",
         "mass": 0.0130 * 10**24 ,
         "volume": 7.15 * 10**18,
         "gravity": 0.7,
+        "preposition": "",
     },
 ]
 small = small.concat(spheres);
@@ -411,7 +471,7 @@ s = Math.floor(small.length * Math.random());
 l = Math.floor(large.length * Math.random());
 let custom = 
 [ 
-    {"Question":"How many " + small[s].name+ "s "+" can fit in the "+large[l].name, "Answer": Math.floor(Math.log10(large[l].volume/small[s].volume))}
+    {"Question":"How many " + small[s].name+ "s "+" can fit in "+large[l].preposition+" "+large[l].name, "Answer": Math.floor(Math.log10(large[l].volume/small[s].volume))}
 ]
 function setCustom(){
     s = Math.floor(small.length * Math.random());
@@ -427,15 +487,15 @@ function setCustom(){
     second = Math.floor(50 * Math.random() + 50)/10.0;
     custom =
     [
-        {"Question":"How many " + small[s].name+ "s "+"can fit in the "+large[l].name +" ?", "Answer": Math.floor(Math.log10(large[l].volume/small[s].volume))},
-        {"Question":"How many " + small[s].name+ "s "+"would it take to fill the "+large[l].name +" ?", "Answer": Math.floor(Math.log10(large[l].volume/small[s].volume))},
-        {"Question":"What is the weight of the " + large[l].name + " in " +small[s].name +"s ?", "Answer": Math.floor(Math.log10(large[l].mass/small[s].mass))},
-        {"Question":"What is the equivelant amount of energy in joules of a " + small[s].name , "Answer": Math.floor(Math.log10(small[s].mass*((3*10**8)**2)))},
-        {"Question":"What is the equivelant amount of energy in joules of the " + large[l].name , "Answer": Math.floor(Math.log10(large[l].mass*((3*10**8)**2)))},
-        {"Question":"If a " + spheres[sp].name + " rolled across " +distances[d].name +" how many revolutions would it make?", "Answer": Math.floor(Math.log10((1000*distances[d].length)/spheres[sp].circumfrence))},
-        {"Question":"How much louder is " + sounds[so].name + " than a " + sounds[so2].name +" ?", "Answer": Math.round((sounds[so].decibels-sounds[so2].decibels)/10)},
-        {"Question":"How much more enrgy is released by a " + second + " magnitude earthquake than a " + first + " ?", "Answer": Math.round(Math.log10((31**(second -first))))},
-        {"Question":"What would the ratio of weight be between a " + small[s].name + " on " + bodies[b].name + " and a "+ small[s2].name + " on the "+ bodies[b2].name, "Answer": Math.round(Math.log10(small[s].mass*bodies[b].gravity/(small[s2].mass*bodies[b2].gravity)))},
+        {"Question":"How many " + small[s].name+ "s "+"can fit in "+large[l].preposition+" "+large[l].name +" ?", "Answer": Math.floor(Math.log10(large[l].volume/small[s].volume))},
+        {"Question":"How many " + small[s].name+ "s "+"would it take to fill "+large[l].preposition+" "+large[l].name +" ?", "Answer": Math.floor(Math.log10(large[l].volume/small[s].volume))},
+        {"Question":"What is the weight of "+large[l].preposition+" " + large[l].name + " in " +small[s].name +"s ?", "Answer": Math.floor(Math.log10(large[l].mass/small[s].mass))},
+        {"Question":"What is the equivelant amount of energy in joules of the mass of "+small[s].preposition+" " + small[s].name+" ?" , "Answer": Math.floor(Math.log10(small[s].mass*((3*10**8)**2)))},
+        {"Question":"What is the equivelant amount of energy in joules of the mass of "+large[l].preposition+" " + large[l].name+" ?" , "Answer": Math.floor(Math.log10(large[l].mass*((3*10**8)**2)))},
+        {"Question":"If "+spheres[sp].preposition+" " + spheres[sp].name + " rolled across "+distances[d].preposition+" " +distances[d].name +" how many revolutions would it make ?", "Answer": Math.floor(Math.log10((1000*distances[d].length)/spheres[sp].circumfrence))},
+        {"Question":"How many times louder is "+sounds[so].preposition+" " + sounds[so].name + " than "+sounds[so2].preposition+" " + sounds[so2].name +" ?", "Answer": Math.round((sounds[so].decibels-sounds[so2].decibels)/10)},
+        {"Question":"How many times more enrgy is released by a " + second + " magnitude earthquake than a " + first + " ?", "Answer": Math.round(Math.log10((31**(second -first))))},
+        {"Question":"What would the ratio of weight be between "+small[s].preposition+" " + small[s].name + " on "+bodies[b].preposition+" " + bodies[b].name + " and "+small[s2].preposition+" "+ small[s2].name + " on "+bodies[b2].preposition+" "+ bodies[b2].name+" ?", "Answer": Math.round(Math.log10(small[s].mass*bodies[b].gravity/(small[s2].mass*bodies[b2].gravity)))},
     ]
 }
 function setMath(){
@@ -716,8 +776,6 @@ window.addEventListener("mousemove", e => {
     let xPos = e.clientX;
     let yPos = e.clientY;
     let height = window.innerHeight;
-    document.documentElement.style.setProperty('--hue', xPos/2 + "deg");
-    document.documentElement.style.setProperty('--light', (yPos/height * 100) + "%");
-
-})
-
+    document.documentElement.style.setProperty('--hue', xPos / 2 + "deg");
+    document.documentElement.style.setProperty('--light', (yPos / height * 100) + "%");
+});

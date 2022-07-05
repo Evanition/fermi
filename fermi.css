@@ -181,7 +181,7 @@ input[type=range]::-webkit-slider-thumb {
     -webkit-appearance: none;
     margin-top: -5%;
 }
-  nput[type=range]:focus::-webkit-slider-runnable-track {
+input[type=range]:focus::-webkit-slider-runnable-track {
     box-shadow: 0 0  4vw yellow;
 }
 

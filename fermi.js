@@ -1,3 +1,4 @@
+// Technoblade Never Dies
 let questions =
 [
     {"Question":"How many Kit-Kats would it take to span the diameter the universe ?", "Answer":"28"},
@@ -379,7 +380,7 @@ let sounds =
     },
     {
         "name": "refridgerator",
-        "decibels": 75,
+        "decibels": 40,
         "preposition": "a",
     },
     {
@@ -515,8 +516,14 @@ function factorialize(n){
         return 1;
     }
 }
-var streak = 0;
-var points = 0;
+if (localStorage.getItem("points") === null) {
+    window.localStorage.setItem('points', 0);
+}
+if (localStorage.getItem("streak") === null) {
+    window.localStorage.setItem('streak', 0);;
+}
+var streak = JSON.parse(window.localStorage.getItem('streak'));;
+var points = JSON.parse(window.localStorage.getItem('points'));
 slider = document.getElementById("myRange");
 
 function randomize(){
@@ -767,6 +774,10 @@ function addPoints() {
     }else{
         document.documentElement.style.setProperty('--points2',  '#FF7276');
     }
+    window.localStorage.removeItem('points');
+    window.localStorage.setItem('points', JSON.stringify(points));
+    window.localStorage.removeItem('streak');
+    window.localStorage.setItem('streak', JSON.stringify(streak));
 }
 slider.oninput = function() {
     var newcolor = (slider.value -1) * 30;
